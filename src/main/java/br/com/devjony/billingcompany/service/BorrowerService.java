@@ -14,4 +14,9 @@ public class BorrowerService {
     public Borrower save(Borrower borrower) {
         return borrowerRepository.save(borrower);
     }
+
+    public Borrower findByCpf(String cpf) {
+        return borrowerRepository.findByCpf(cpf);
+    }
+
 }

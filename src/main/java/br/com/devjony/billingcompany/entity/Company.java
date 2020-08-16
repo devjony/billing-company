@@ -3,12 +3,13 @@ package br.com.devjony.billingcompany.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
+@ToString
 @NoArgsConstructor
 public class Company implements Serializable {
 
@@ -21,8 +22,5 @@ public class Company implements Serializable {
     @Getter
     @Setter
     private String fantasyName;
-
-    @OneToMany(mappedBy = "borrower")
-    List<Debt> debts;
 
 }

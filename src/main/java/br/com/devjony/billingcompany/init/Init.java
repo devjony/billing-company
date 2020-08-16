@@ -1,5 +1,6 @@
 package br.com.devjony.billingcompany.init;
 
+import br.com.devjony.billingcompany.dto.DebtDTO;
 import br.com.devjony.billingcompany.entity.Borrower;
 import br.com.devjony.billingcompany.entity.Company;
 import br.com.devjony.billingcompany.entity.Debt;
@@ -12,6 +13,8 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class Init implements ApplicationListener<ContextRefreshedEvent> {
@@ -28,6 +31,8 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
+//        ###### BORROWER ######
+
         Borrower borrower = new Borrower();
         borrower.setName("Carla");
         borrower.setCpf("11111111111111");
@@ -43,6 +48,8 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
         borrower3.setCpf("333333333333333");
         borrowerService.save(borrower3);
 
+//        ###### COMPANIES ######
+
         Company company = new Company();
         company.setFantasyName("Lojas Renner");
         companyService.save(company);
@@ -54,6 +61,8 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
         Company company3 = new Company();
         company3.setFantasyName("Zizane");
         companyService.save(company3);
+
+//        ###### DEBTS ######
 
         Debt debt = new Debt();
         debt.setBorrower(borrower);
@@ -78,5 +87,11 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
         debt4.setCompany(company3);
         debt4.setValue(new BigDecimal("1700"));
         debtService.save(debt4);
+
+//        ###### TESTS ######
+        List<DebtDTO> teste = new ArrayList<DebtDTO>();
+        teste = debtService.findDebitsByBorrowerCpf("11111111111111");
+        System.out.println(teste);
     }
 }
+
