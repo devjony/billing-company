@@ -20,19 +20,19 @@ public class DebtService {
     }
 
     public List<DebtDTO> findDebitsByBorrowerCpf(String cpf) {
-        return debtToDebtDTO(debtRepository.findDebitsByBorrowerCpf(cpf));
+        return debtToDebtDTO(debtRepository.findDebtsByBorrowerCpf(cpf));
     }
 
     public List<DebtDTO> debtToDebtDTO(List<Debt> debts) {
-        List<DebtDTO> debtsDTO = new ArrayList<DebtDTO>();
+        List<DebtDTO> debtDTOS = new ArrayList<DebtDTO>();
 
         for (Debt debt : debts) {
-            debtsDTO.add(new DebtDTO(debt.getBorrower().getName(),
+            debtDTOS.add(new DebtDTO(debt.getBorrower().getName(),
                     debt.getCompany().getFantasyName(),
                     debt.getValue())
             );
         }
 
-        return debtsDTO;
+        return debtDTOS;
     }
 }
