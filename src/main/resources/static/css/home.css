@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+}
+
+.content {
+    padding-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-form {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Billing Company</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="content">
+        <form class="content-form" method="post">
+            <div class="form-group">
+                <label for="inputCpf">Borrower cpf</label>
+                <input type="text" class="form-control" id="inputCpf" aria-describedby="cpfHelp" required> <!--Add class "is-invalid"-->
+                <div class="invalid-feedback">
+                    Please provide a valid cpf.
+                </div>
+                <small id="cpfHelp" class="form-text text-muted">We'll never share your cpf with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="companySelect">Company</label>
+                <select th:field="*{companies}" class="form-control" id="companySelect">
+                    <option th:value="0" th:text="Select..." />
+                    <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyFantasyName}" />
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
