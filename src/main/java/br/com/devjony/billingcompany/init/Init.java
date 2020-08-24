@@ -87,11 +87,6 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
         debt4.setCompany(company3);
         debt4.setValue(new BigDecimal("1700"));
         debtService.save(debt4);
-
-//        ###### TESTS ######
-        List<DebtDTO> teste = new ArrayList<DebtDTO>();
-        teste = debtService.findDebitsByBorrowerCpf("11111111111111");
-        System.out.println(teste);
     }
 }
 

@@ -10,10 +10,10 @@
 <body>
 <div class="container">
     <div class="content">
-        <form class="content-form" method="post">
+        <form class="content-form" method="post" th:action="@{/debts}" th:object="${formDTO}">
             <div class="form-group">
-                <label for="inputCpf">Borrower cpf</label>
-                <input type="text" class="form-control" id="inputCpf" aria-describedby="cpfHelp" required> <!--Add class "is-invalid"-->
+                <label for="cpf">Borrower cpf</label>
+                <input type="text" class="form-control" th:field="*{cpf}" id="cpf" aria-describedby="cpfHelp" required> <!--Add class "is-invalid"-->
                 <div class="invalid-feedback">
                     Please provide a valid cpf.
                 </div>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="companySelect">Company</label>
-                <select th:field="*{companies}" class="form-control" id="companySelect">
+                <select th:field="*{companyId}" class="form-control" id="companySelect">
                     <option th:value="0" th:text="Select..." />
                     <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyFantasyName}" />
                 </select>
