@@ -30,4 +30,11 @@ public class DebtController {
         mv.addObject("debtsList", debtService.findDebitsByBorrowerCpf(cpf));
         return mv;
     }
+
+    @GetMapping("/{id}")
+    public ModelAndView getDebtsWithPaymentWays(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView("/debt/list-debts-payment-ways");
+//        mv.addObject("paymentWays", debtService);
+        return mv;
+    }
 }

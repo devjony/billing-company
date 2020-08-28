@@ -21,14 +21,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="debt : ${debtsList}">
-                <td th:text="${debt.getBorrowerName()}"/>
-                <td th:text="${debt.getCompanyFantasyName()}"/>
-                <td th:text="${debt.getDebtValue()}"/>
-                <td>
-                    <a th:text="'Click Here'" th:href="@{/debts/{id}(id=${debt.id})}"/>
-                </td>
-            </tr>
+            <!--            <tr th:each="debt : ${debtsList}">-->
+            <!--                <td th:text="${debt.getBorrowerName()}"/>-->
+            <!--                <td th:text="${debt.getCompanyFantasyName()}"/>-->
+            <!--                <td th:text="${debt.getDebtValue()}"/>-->
+            <!--                <td>-->
+            <!--                    <a th:text="'Click Here'" th:href="@{/debts}"/>-->
+            <!--                </td>-->
+            <!--            </tr>-->
             </tbody>
         </table>
         <a th:href="@{/debts}">
