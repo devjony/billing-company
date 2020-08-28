@@ -1,6 +1,5 @@
 package br.com.devjony.billingcompany.init;
 
-import br.com.devjony.billingcompany.dto.DebtDTO;
 import br.com.devjony.billingcompany.entity.Borrower;
 import br.com.devjony.billingcompany.entity.Company;
 import br.com.devjony.billingcompany.entity.Debt;
@@ -13,8 +12,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class Init implements ApplicationListener<ContextRefreshedEvent> {

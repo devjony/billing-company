@@ -27,7 +27,8 @@ public class DebtService {
         List<DebtDTO> debtDTOS = new ArrayList<DebtDTO>();
 
         for (Debt debt : debts) {
-            debtDTOS.add(new DebtDTO(debt.getBorrower().getName(),
+            debtDTOS.add(new DebtDTO(debt.getId(),
+                    debt.getBorrower().getName(),
                     debt.getCompany().getFantasyName(),
                     debt.getValue())
             );

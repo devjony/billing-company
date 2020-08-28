@@ -1,6 +1,5 @@
 package br.com.devjony.billingcompany.controller;
 
-import br.com.devjony.billingcompany.dto.FormDTO;
 import br.com.devjony.billingcompany.service.CompanyService;
 import br.com.devjony.billingcompany.service.DebtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +20,14 @@ public class DebtController {
     @GetMapping
     public ModelAndView getCompanies() {
         ModelAndView mv = new ModelAndView("/home");
-        mv.addObject("formDTO", new FormDTO());
         mv.addObject("companies", companyService.getCompanies());
         return mv;
     }
 
     @PostMapping
-    public ModelAndView getDebtsByBorrowerCpf(FormDTO formDTO) {
+    public ModelAndView getDebtsByBorrowerCpf(@RequestParam String cpf) {
         ModelAndView mv = new ModelAndView("/debt/list-debts");
-        mv.addObject("debtsList", debtService.findDebitsByBorrowerCpf(formDTO.getCpf()));
+        mv.addObject("debtsList", debtService.findDebitsByBorrowerCpf(cpf));
         return mv;
     }
-
 }
