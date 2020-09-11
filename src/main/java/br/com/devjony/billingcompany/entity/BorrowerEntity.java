@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @ToString
 @NoArgsConstructor
-public class Borrower implements Serializable {
+public class BorrowerEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

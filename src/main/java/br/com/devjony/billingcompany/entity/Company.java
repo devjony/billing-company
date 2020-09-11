@@ -22,5 +22,4 @@ public class Company implements Serializable {
     @Getter
     @Setter
     private String fantasyName;
-
 }

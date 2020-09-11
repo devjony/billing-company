@@ -24,17 +24,17 @@ public class DebtController {
         return mv;
     }
 
-    @PostMapping
-    public ModelAndView getDebtsByBorrowerCpf(@RequestParam String cpf) {
+    @GetMapping("/{cpf}")
+    public ModelAndView getDebtsByBorrowerCpf(@PathVariable String cpf) {
         ModelAndView mv = new ModelAndView("/debt/list-debts");
         mv.addObject("debtsList", debtService.findDebitsByBorrowerCpf(cpf));
         return mv;
     }
 
     @GetMapping("/{id}")
-    public ModelAndView getDebtsWithPaymentWays(@PathVariable("id") Integer id) {
-        ModelAndView mv = new ModelAndView("/debt/list-debts-payment-ways");
-//        mv.addObject("paymentWays", debtService);
+    public ModelAndView getDebtsWithPaymentTypes(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView("/debt/list-debts-payment-types");
+//        mv.addObject("paymentTypes", debtService);
         return mv;
     }
 }

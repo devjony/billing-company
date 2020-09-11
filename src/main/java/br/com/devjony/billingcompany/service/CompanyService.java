@@ -1,9 +1,7 @@
 package br.com.devjony.billingcompany.service;
 
 import br.com.devjony.billingcompany.dto.CompanyDTO;
-import br.com.devjony.billingcompany.dto.DebtDTO;
 import br.com.devjony.billingcompany.entity.Company;
-import br.com.devjony.billingcompany.entity.Debt;
 import br.com.devjony.billingcompany.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

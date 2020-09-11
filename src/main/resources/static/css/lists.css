@@ -19,3 +19,9 @@ button {
 h1 {
     padding-bottom: 50px;
 }
+
+.company-list-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}

@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div class="content">
-        <form class="content-form" method="post" th:action="@{/debts}">
+        <form class="content-form" method="get" th:action="@{/debts}">
             <div class="form-group">
                 <label for="cpf">Borrower cpf</label>
                 <input type="text" class="form-control" id="cpf" name="cpf" aria-describedby="cpfHelp" required>
@@ -27,7 +27,12 @@
             <!--                    <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyFantasyName}" />-->
             <!--                </select>-->
             <!--            </div>-->
-            <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+            <div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+            </div>
+            <div class="home-link">
+                <a th:href="@{/company}">Companies List</a>
+            </div>
         </form>
     </div>
 </div>

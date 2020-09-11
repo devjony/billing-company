@@ -30,8 +30,8 @@ public class DebtService {
             debtDTOS.add(new DebtDTO(debt.getId(),
                     debt.getBorrower().getName(),
                     debt.getCompany().getFantasyName(),
-                    debt.getValue())
-            );
+                    debt.getValue()
+            ));
         }
 
         return debtDTOS;
