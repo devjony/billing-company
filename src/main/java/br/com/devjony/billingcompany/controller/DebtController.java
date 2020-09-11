@@ -18,14 +18,7 @@ public class DebtController {
     CompanyService companyService;
 
     @GetMapping
-    public ModelAndView getCompanies() {
-        ModelAndView mv = new ModelAndView("/home");
-        mv.addObject("companies", companyService.getCompanies());
-        return mv;
-    }
-
-    @GetMapping("/{cpf}")
-    public ModelAndView getDebtsByBorrowerCpf(@PathVariable String cpf) {
+    public ModelAndView getDebtsByBorrowerCpf(@RequestParam String cpf) {
         ModelAndView mv = new ModelAndView("/debt/list-debts");
         mv.addObject("debtsList", debtService.findDebitsByBorrowerCpf(cpf));
         return mv;

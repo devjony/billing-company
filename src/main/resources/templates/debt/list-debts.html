@@ -3,7 +3,7 @@
 
 <head>
     <title>Billing Company</title>
-    <link th:href="@{/css/list-debts.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/lists.css}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
 
@@ -31,9 +31,14 @@
             </tr>
             </tbody>
         </table>
-        <a th:href="@{/debts}">
-            <button class="btn btn-primary">Return</button>
-        </a>
+        <div class="company-list-buttons">
+            <a th:href="@{/debts/create}">
+                <button class="btn btn-primary">Create</button>
+            </a>
+            <a th:href="@{/}">
+                <button class="btn btn-secondary">Home</button>
+            </a>
+        </div>
     </div>
 </div>
 </body>
