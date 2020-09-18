@@ -22,6 +22,7 @@ public class Debt implements Serializable {
 
     @Getter
     @Setter
+    @Column(name = "price")
     private BigDecimal value;
 
     @Getter

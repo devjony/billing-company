@@ -13,19 +13,12 @@
         <form class="content-form" method="post" th:action="@{/debts}">
             <div class="form-group" th:object="${company}">
                 <input type="hidden" th:field="*{id}" class="form-control" id="id" name="id">
-                <label for="fantasyName">Company Name</label>
+                <label for="fantasyName">Company's Name</label>
                 <input type="text" th:field="*{fantasyName}" class="form-control" id="fantasyName" name="fantasyName" required>
                 <br>
-                <label for="companyLogo">Company Logo</label>
+                <label for="companyLogo">Company's Logo</label>
                 <input type="text" class="form-control" id="companyLogo" name="companyLogo" required>
             </div>
-            <!--            <div class="form-group">-->
-            <!--                <label for="companySelect">Company</label>-->
-            <!--                <select th:field="*{companyId}" class="form-control" id="companySelect">-->
-            <!--                    <option th:value="0" th:text="Select..." />-->
-            <!--                    <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyFantasyName}" />-->
-            <!--                </select>-->
-            <!--            </div>-->
             <div>
                 <button type="submit" class="btn btn-primary" id="submitBtn">Create Company</button>
             </div>

@@ -3,24 +3,28 @@
 
 <head>
     <title>Billing Company</title>
-    <link th:href="@{/css/list-debts.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/lists.css}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
 
 <body>
 <div class="container">
     <div class="content">
-        <h1>Debits List</h1>
+        <h1>Payment Methods</h1>
         <table class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">Borrower</th>
                 <th scope="col">Company</th>
                 <th scope="col">Value</th>
-                <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
+            <tr>
+                <td th:text="${debt.getBorrowerName()}"></td>
+                <td th:text="${debt.getCompanyFantasyName()}"></td>
+                <td th:text="${debt.getDebtValue()}"></td>
+            </tr>
             <!--            <tr th:each="debt : ${debtsList}">-->
             <!--                <td th:text="${debt.getBorrowerName()}"/>-->
             <!--                <td th:text="${debt.getCompanyFantasyName()}"/>-->
@@ -31,9 +35,9 @@
             <!--            </tr>-->
             </tbody>
         </table>
-        <a th:href="@{/debts}">
-            <button class="btn btn-primary">Return</button>
-        </a>
+        <div class="home-link">
+            <button class="btn btn-secondary" onclick='history.go(-1)'>Return</button>
+        </div>
     </div>
 </div>
 </body>

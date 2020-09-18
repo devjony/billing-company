@@ -32,7 +32,7 @@
             </tbody>
         </table>
         <div class="company-list-buttons">
-            <a th:href="@{/debts/create}">
+            <a th:href="@{/debts/create/{cpf}(cpf=${cpf})}">
                 <button class="btn btn-primary">Create</button>
             </a>
             <a th:href="@{/}">
