@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+}
+
+.content {
+    padding-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding-top: 50px;
+    justify-content: left;
+}
+
+h1 {
+    padding-bottom: 50px;
+}
+
+.company-list-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Billing Company</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/home.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="content">
+        <form class="content-form" method="post" th:action="@{/debts}">
+            <div class="form-group" th:object="${debt}">
+                <input type="hidden" th:field="${borrower.id}" class="form-control" id="borrower">
+                <label for="value">Debt Value</label>
+                <input type="number" th:field="*{value}" class="form-control" id="value" min="1" step="any" required>
+                <br>
+                <label for="companySelect">Company</label>
+                <select th:field="*{company}" class="form-control" id="companySelect">
+                    <option th:value="0" th:text="Select..." />
+                    <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyFantasyName}" />
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Create Debt</button>
+            </div>
+            <div class="home-link">
+                <a href='#' onclick='history.go(-1)'>Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
