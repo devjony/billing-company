@@ -1,6 +1,6 @@
 package br.com.devjony.billingcompany.service;
 
-import br.com.devjony.billingcompany.entity.BorrowerEntity;
+import br.com.devjony.billingcompany.entity.Borrower;
 import br.com.devjony.billingcompany.repository.BorrowerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +11,11 @@ public class BorrowerService {
     @Autowired
     BorrowerRepository borrowerRepository;
 
-    public BorrowerEntity save(BorrowerEntity borrower) {
+    public Borrower save(Borrower borrower) {
         return borrowerRepository.save(borrower);
     }
 
-    public BorrowerEntity findByCpf(String cpf) {
+    public Borrower findByCpf(String cpf) {
         return borrowerRepository.findByCpf(cpf);
     }
 

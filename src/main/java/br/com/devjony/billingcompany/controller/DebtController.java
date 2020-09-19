@@ -1,6 +1,5 @@
 package br.com.devjony.billingcompany.controller;
 
-import br.com.devjony.billingcompany.entity.BorrowerEntity;
 import br.com.devjony.billingcompany.entity.Debt;
 import br.com.devjony.billingcompany.service.BorrowerService;
 import br.com.devjony.billingcompany.service.CompanyService;

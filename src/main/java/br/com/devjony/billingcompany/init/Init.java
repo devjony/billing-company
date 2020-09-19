@@ -1,6 +1,6 @@
 package br.com.devjony.billingcompany.init;
 
-import br.com.devjony.billingcompany.entity.BorrowerEntity;
+import br.com.devjony.billingcompany.entity.Borrower;
 import br.com.devjony.billingcompany.entity.Company;
 import br.com.devjony.billingcompany.entity.Debt;
 import br.com.devjony.billingcompany.service.BorrowerService;
@@ -12,8 +12,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class Init implements ApplicationListener<ContextRefreshedEvent> {
@@ -32,17 +30,17 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 
 //        ###### BORROWER ######
 
-        BorrowerEntity borrower = new BorrowerEntity();
+        Borrower borrower = new Borrower();
         borrower.setName("Carla");
         borrower.setCpf("11111111111111");
         borrowerService.save(borrower);
 
-        BorrowerEntity borrower2 = new BorrowerEntity();
+        Borrower borrower2 = new Borrower();
         borrower2.setName("Luiz");
         borrower2.setCpf("2222222222222");
         borrowerService.save(borrower2);
 
-        BorrowerEntity borrower3 = new BorrowerEntity();
+        Borrower borrower3 = new Borrower();
         borrower3.setName("Carlos");
         borrower3.setCpf("333333333333333");
         borrowerService.save(borrower3);

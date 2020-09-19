@@ -35,6 +35,6 @@ public class Debt implements Serializable {
     @Setter
     @ManyToOne
     @JoinColumn(name = "borrower_id")
-    BorrowerEntity borrower;
+    Borrower borrower;
 
 }
